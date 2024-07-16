@@ -120,5 +120,5 @@ model Workflows {
   publish           Boolean? @default(false)
   description       String
   User              User     @relation(fields: [userId], references: [clerkId])
-  userId            String   @default(client_2jH9RSY0axb8uDJTUCTDmNNKyKN)
+  userId            Int
 }
