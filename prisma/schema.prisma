@@ -120,5 +120,5 @@ model Workflows {
   publish           Boolean? @default(false)
   description       String
   User              User     @relation(fields: [userId], references: [clerkId])
-  userId            String   @map("clerkId")
+  userId            String   @map("userId")
 }
