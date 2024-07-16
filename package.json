@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently --names \"NGROK,NEXT\" \"npm run start:ngrok\" \"next dev --experimental-https\"",
+    "dev": "next dev --experimental-https",
     "start:ngrok": "ngrok http --scheme https --host-header rewrite --domain upward-filly-wealthy.ngrok-free.app 3000 > ngrok.log & sleep 5 && cat ngrok.log",
-    "build": "prisma generate && next build",
+    "build": "concurrently --names \"NGROK,BUILD\" \"npm run start:ngrok\" \"prisma generate && next build\"",
     "start": "next start",
     "lint": "next lint"
   },
