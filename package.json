@@ -8,7 +8,6 @@
     "build": "concurrently --names \"NGROK,BUILD\" \"npm run start:ngrok\" \"prisma generate && prisma migrate deploy && next build\"",
     "start": "next start",
     "lint": "next lint"
-  
 },
   "dependencies": {
     "@clerk/nextjs": "^4.29.9",
