@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --experimental-https",
-    "start:ngrok": "ngrok http --authtoken $NGROK_AUTHTOKEN --subdomain=lunawebhook 3000 | tee ngrok.log & sleep 15 && cat ngrok.log",
-    "build": "npm run start:ngrok && prisma generate && next build",
+    "build": "prisma generate && next build && npm run start:ngrok",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "start:ngrok": "ngrok http --authtoken $NGROK_AUTHTOKEN --subdomain=lunawebhook 3000 | tee ngrok.log & sleep 15 && cat ngrok.log"
+    
 },
   "dependencies": {
     "@clerk/nextjs": "^4.29.9",
