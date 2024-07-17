@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --experimental-https",
-    "start:ngrok": "ngrok http --authtoken $NGROK_AUTHTOKEN lunawebhook.ngrok.app 80 > ngrok.log & sleep 15 && cat ngrok.log",
-    "build": "concurrently --names \"NGROK,BUILD\" \"npm run start:ngrok\" \"prisma generate  && next build\"",
+    "start:ngrok": "ngrok http --authtoken $NGROK_AUTHTOKEN --domain=lunawebhook.ngrok.app 80 > ngrok.log & sleep 15 && cat ngrok.log",
+    "build": "npm run start:ngrok && prisma generate && next build",
     "start": "next start",
     "lint": "next lint"
 },
