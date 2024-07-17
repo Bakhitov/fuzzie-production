@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --experimental-https",
-    "build": "prisma generate && next build && npm run start:ngrok",
+    "build": "prisma generate && next build",
     "start": "next start", 
-    "start:ngrok": "ngrok http https://localhost:3000 --authtoken $NGROK_AUTHTOKEN --subdomain=lunawebhook | tee ngrok.log & sleep 15 && cat ngrok.log",
     "lint": "next lint"
 },
   "dependencies": {
@@ -52,9 +51,7 @@
     "uuid": "^9.0.1",
     "vaul": "^0.9.0",
     "zod": "^3.22.4",
-    "zustand": "^4.5.2",
-    "concurrently": "^6.0.0",
-    "ngrok": "^4.3.0"
+    "zustand": "^4.5.2"
   },
   "devDependencies": {
     "@types/node": "^20",
