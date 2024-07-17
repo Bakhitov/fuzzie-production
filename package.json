@@ -7,7 +7,7 @@
     "build": "prisma generate && next build && npm run start:ngrok",
     "start": "next start",
     "lint": "next lint",
-    "start:ngrok": "ngrok http --authtoken $NGROK_AUTHTOKEN --subdomain=lunawebhook 80 | tee ngrok.log & sleep 15 && cat ngrok.log"
+    "start:ngrok": "ngrok http https://localhost:3000 --authtoken $NGROK_AUTHTOKEN --subdomain=lunawebhook | tee ngrok.log & sleep 15 && cat ngrok.log",
 },
   "dependencies": {
     "@clerk/nextjs": "^4.29.9",
